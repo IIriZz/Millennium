@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet"
+              href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+              integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+              crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="/static/css/font_style.css">
+        <link rel="stylesheet" type="text/css" href="/static/css/main_style.css">
+        <title>Главная</title>
+    </head>
+    <body>
+        <div class="wrapper">
+            <nav class="navbar navbar-custom fixed-top">
+                <div class="navbar-brand">Millennium</div>
+
+
+                <a href="/user/{{ current_user.username }}" class="hypertext">Настройки</a>
+
+            </nav>
+
+        <div id="main-section">
+
+            <nav id="sidebar">
+                <h4>Комнаты</h4>
+                {% for room in rooms %}
+                    <p id="{{ room|title }}" class="select-room cursor-pointer">{{ room|title }}</p>
+                {% endfor %}
+            </nav>
+
+            <div id="rightside-pannel">
+                    <div id="display-message-section">
+                    </div>
+                   <div id="input-area" class="input-group mb-3">
+                        <input type="text" id="user_message" class="form-control" placeholder="Введите сообщение..." aria-label="Type a message" aria-describedby="basic-addon2" autocomplete="off">
+                        <div class="input-group-append">
+                            <button id="send_message" class="btn btn-custom" type="button">Отправить<i class="bi bi-send"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <script type="text/javascript">
+            const username = '{{ username }}';
+        </script>
+
+        <span id="get-username">{{ username }}</span>
+
+        <script src="/static/js/main.js"></script>
+
+        <!--SocketIO-->
+        <script type="text/javascript"
+                src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js"></script>
+
+        <script src="/static/js/script.js"></script>
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+    </body>
+</html>

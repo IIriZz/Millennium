@@ -1,0 +1,54 @@
+form.register_form {
+    margin-left: 450px;
+    margin-top: 75px;
+    max-width: 450px;
+    border: 2px solid #bd93f9;
+    border-radius: 15px;
+    padding: 30px;
+    color: white;
+    font-family: Yandex Sans Text-Thin;
+    background: #282a36;
+    box-shadow: 5px 5px 15px black;
+}
+
+form.login_form {
+    margin-left: 450px;
+    margin-top: 75px;
+    max-width: 460px;
+    border: 2px solid #bd93f9;
+    border-radius: 15px;
+    padding: 30px;
+    color: white;
+    font-family: Yandex Sans Text-Thin;
+    background: #282a36;
+    box-shadow: 5px 5px 15px black;
+}
+
+form.recovery_form {
+    margin-left: 450px;
+    margin-top: 75px;
+    max-width: 460px;
+    border: 2px solid #bd93f9;
+    border-radius: 15px;
+    padding: 30px;
+    color: white;
+    font-family: Yandex Sans Text-Thin;
+    background: #282a36;
+    box-shadow: 5px 5px 15px black;
+}
+
+.body {
+    background-image: url('/static/img/background_image.png')
+}
+
+
+.btn-outline-custom {
+    background: #bd93f9;
+}
+
+.hypertext {
+    color: #bd93f9;
+}
+.hypertext:hover {
+    color: #bd93f9;
+}

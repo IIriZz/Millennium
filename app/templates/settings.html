@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet"
+              href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+              integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+              crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="/static/css/font_style.css">
+        <link rel="stylesheet" type="text/css" href="/static/css/main_style.css">
+        <title>Главная</title>
+    </head>
+    <body>
+        <div class="wrapper">
+            <nav class="navbar navbar-custom fixed-top">
+                <div class="navbar-brand">Millennium</div>
+                <a href="/main" class="hypertext">Главная</a>
+            </nav>
+        </div>
+
+        <table>
+    <tr valign="top">
+        <td><img src="{{user.avatar(128)}}"></td>
+        <td>
+            <h1>User: {{user.nickname}}</h1>
+            {% if user.about_me %}<p>{{user.about_me}}</p>{% endif %}
+            {% if user.id == current_user.id %}<p><a href="/edit">Edit</a></p>{% endif %}
+        </td>
+    </tr>
+</table>
+<hr>
+{% for post in posts %}
+    {% include 'post.html' %}
+{% endfor %}
+
+      <a href="/logout" class="hypertext">Выйти из аккаунта</a>
+    </body>

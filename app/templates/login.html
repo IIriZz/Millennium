@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet"
+              href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+              integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+              crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="/static/css/form_style.css">
+        <link rel="stylesheet" type="text/css" href="/static/css/font_style.css">
+        <title>Авторизация</title>
+    </head>
+    <body class="body">
+        <form action="" class="login_form" method="post" novalidate>
+            {{ form.hidden_tag() }}
+            <h2>Авторизация пользователя</h2>
+            <p>
+                {{ form.email.label }}<br>
+                {{ form.email(class="form-control", type="email") }}<br>
+                {% for error in form.password.errors %}
+            <div>
+                {{ error }}
+            </div>
+            {% endfor %}
+            </p>
+            <p>
+                {{ form.password.label }}<br>
+                {{ form.password(class="form-control", type="password") }}<br>
+                {% for error in form.password.errors %}
+            <div>
+                {{ error }}
+            </div>
+            {% endfor %}
+            </p>
+            <p>{{ form.remember_me() }} {{ form.remember_me.label }}</p>
+            <p>{{ form.submit(type="submit", class="btn btn-outline-custom") }}</p>
+            <a href="/register" class="hypertext">Нет аккаунта? Так зарегистрируйся!</a>
+        </form>
+    </body>
+</html>
